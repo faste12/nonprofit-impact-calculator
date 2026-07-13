@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nonprofit Impact Calculator</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fa;
+margin:40px;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,0,0,.1);
+}
+
+h1{
+color:#0f766e;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+}
+
+button{
+padding:12px 25px;
+background:#0f766e;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.result{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+color:#0f766e;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Nonprofit Impact Calculator</h1>
+
+<p>Calculate cost per beneficiary.</p>
+
+<input id="cost" type="number" placeholder="Total Expenses">
+
+<input id="beneficiaries" type="number" placeholder="Number of Beneficiaries">
+
+<button onclick="calculate()">Calculate</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+function calculate(){
+
+let cost=document.getElementById("cost").value;
+
+let beneficiaries=document.getElementById("beneficiaries").value;
+
+if(cost=="" || beneficiaries==""){
+
+alert("Please fill all fields");
+
+return;
+
+}
+
+let value=cost/beneficiaries;
+
+document.getElementById("result").innerHTML=
+
+"Cost per beneficiary = "+value.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
